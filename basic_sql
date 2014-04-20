@@ -30,3 +30,64 @@ INSERT INTO
    1. insert into Table_Name values (val1, val2);
    2. insert into Table_Name (col1, col2) values (val1, val2);
 
+UPDATE 
+# While updating if where clause is omitted, all the rows will be updated.
+  This is used to update value in a particular column in table.
+update Table_Name set Col1 = Val1 where Col1 = val2;
+
+DELETE 
+  This is used to delete data from the table.
+  
+INJECTION
+  This is one of the top web site vulnerabilities. Generally, we require user to enter a query in to a box as an 
+id or something. Malicious users can take advantage of this situation by inserting queries which can modify the database
+in some un-authenticated way. For instance, 
+
+Username : 1 or 1=1
+Now, on the back-end generally there is query like 
+select *from Table_Name where user = 1 or 1=1;
+As 1=1 is always correct the page will show all the data to the user. 
+  There are many solutions to this problem. First is blacklisting of words which user can't enter. But this will lead
+to unavailability of certain words which are required. So, the proper way to stop these SQL Injection attacks is usage
+of parameters. 
+
+SELECT TOP FEW ENTRIES
+  This task can be accomplished by using rownum. ROWNUM is the number of the current row. So, for selecting top 10
+rows from Oracle database.
+select *
+from Table_Name
+where rownum <= 10;
+
+LIKE 
+  As described above this is used inside where clause. It is used for matching pattern. For eg.,
+
+select *
+from Table_Name
+where Column_Name like 's%';
+
+  The above command returns all records corresponding to rows which have starting of Column_Name with character s.
+  
+WILDCARDS 
+  These are used to match characters or group of characters in LIKE statements.
+  1. % - Matches zero or more characters.
+  2. _ - Matches single character.
+  3. [] - Matches character from character list specified.
+  4. [^] or [!] - Matches anything which is not specified in the character list.
+  
+IN 
+  This is used to select from a group of items in a where clause. Example, 
+select *
+from Table_Name
+where Column_Name in ('a', 'b', 'c');
+
+BETWEEN 
+  This is used to select a range in where clause. It can be used to select date, text, or numbers. Example,
+select *
+from Table_Name
+where Column_Name between a and b;
+# Check for inclusivity, exclusivity of left and right values.
+
+
+TO BE CONTINUED.......
+
+
