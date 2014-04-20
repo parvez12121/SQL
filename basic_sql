@@ -1,0 +1,14 @@
+Basic commands:
+
+select *from Table_Name;
+
+It is used to project name of all column of a table. * can be replaced by the name of the attribute which you want
+to display.
+
+The result of the above command is stored in a table called result-set. 
+
+select distinct Column_name from Table_Name;
+
+The above command is used to select distinct elements from the table. The duplicate values are removed by using
+above command. 
+
