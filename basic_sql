@@ -30,6 +30,7 @@ ORDER BY
   It is used to sort the column names. 
 select *from Table_Name order by Column_Name;
 
+
 INSERT INTO 
   It is used to insert values into the database table. It has two forms :
    1. insert into Table_Name values (val1, val2);
