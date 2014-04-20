@@ -1,14 +1,32 @@
 Basic commands:
 
+SELECT
+
 select *from Table_Name;
-
-It is used to project name of all column of a table. * can be replaced by the name of the attribute which you want
-to display.
-
-The result of the above command is stored in a table called result-set. 
+  It is used to project name of all column of a table. * can be replaced by the name of the attribute which you want
+to display. The result of the above command is stored in a table called result-set. 
 
 select distinct Column_name from Table_Name;
-
-The above command is used to select distinct elements from the table. The duplicate values are removed by using
+  The above command is used to select distinct elements from the table. The duplicate values are removed by using
 above command. 
+
+WHERE 
+  Where clause puts conditions on the values returned by the select statement.
+select *from Table_Name where Column_Name = 'abc';
+  The above statement prints only those columns where the column has the values 'abc'. Various operators which can 
+be used with where clause are :
+  1. = (Equal)
+  2. <> (Not equal, in some versions it can be represented as !=)
+  3. LIKE (Searching for a pattern)
+  4. IN (Checks in range)
+  5. BETWEEN (Checks from a value v1 to value v2)
+  
+ORDER BY 
+  It is used to sort the column names. 
+select *from Table_Name order by Column_Name;
+
+INSERT INTO 
+  It is used to insert values into the database table. It has two forms :
+   1. insert into Table_Name values (val1, val2);
+   2. insert into Table_Name (col1, col2) values (val1, val2);
 
